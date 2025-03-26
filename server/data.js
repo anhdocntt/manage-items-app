@@ -1,5 +1,5 @@
 const database = {
-    "items": [
+    "products": [
         {
             "id": "1",
             "name": "Item 1",
@@ -8,7 +8,8 @@ const database = {
             "price": 10.49,
             "images": [
                 "https://placehold.co/200x200"
-            ]
+            ],
+            "isDeleted": false
         },
         {
             "id": "2",
@@ -16,7 +17,8 @@ const database = {
             "type": "Type B",
             "category": 1,
             "price": 15.49,
-            "images": []
+            "images": [],
+            "isDeleted": false
         },
         {
             "id": "3",
@@ -24,7 +26,8 @@ const database = {
             "type": "Type A",
             "category": 2,
             "price": 20,
-            "images": []
+            "images": [],
+            "isDeleted": false
         },
         {
             "id": "4",
@@ -32,7 +35,8 @@ const database = {
             "type": "Type C",
             "category": 0,
             "price": 5.75,
-            "images": []
+            "images": [],
+            "isDeleted": false
         },
         {
             "id": "5",
@@ -43,7 +47,8 @@ const database = {
             "images": [
                 "https://placehold.co/200x200",
                 "https://placehold.co/300x200",
-            ]
+            ],
+            "isDeleted": false
         },
     ]
 }

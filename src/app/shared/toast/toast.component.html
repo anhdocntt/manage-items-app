@@ -1,0 +1,12 @@
+<ng-template #success let-data>
+    <div class="title" (click)="data.cb()">{{(data?.title)}}</div>
+    <div class="mess" (click)="data.cb()">{{(data?.message)}}</div>
+</ng-template>
+<ng-template #warning let-data>
+    <div class="title" (click)="data.cb()">{{(data?.title)}}</div>
+    <div class="mess" (click)="data.cb()">{{(data?.message)}}</div>
+</ng-template>
+<ng-template #danger let-data>
+    <div class="title" (click)="data.cb()">{{(data?.title)}}</div>
+    <div class="mess" (click)="data.cb()">{{(data?.message)}}</div>
+</ng-template>
