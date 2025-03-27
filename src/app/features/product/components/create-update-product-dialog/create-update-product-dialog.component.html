@@ -1,0 +1,47 @@
+<div class="dialog-form-container">
+  <h1 class="page-title">Add Product</h1>
+  <form class="input-grid" [formGroup]="productForm">
+    <label class="required">Name</label>
+    <div class="input-primary" [class.invalid]="productForm.controls.name.touched && productForm.controls.name.invalid">
+      <input type="text" placeholder="Name" formControlName="name">
+      <p class="error-text" *ngIf="this.productForm.controls.name.errors?.['required']">
+        This field is required.
+      </p>
+    </div>
+    <label class="required">Category</label>
+    <div class="input-primary"
+      [class.invalid]="productForm.controls.category.touched && productForm.controls.category.invalid">
+      <input type="text" placeholder="Category" formControlName="category">
+      <p class="error-text" *ngIf="this.productForm.controls.category.errors?.['required']">
+        This field is required.
+      </p>
+    </div>
+    <label>Type</label>
+    <div class="input-primary" [class.invalid]="productForm.controls.type.touched && productForm.controls.type.invalid">
+      <input type="text" placeholder="Type" formControlName="type">
+    </div>
+    <label class="required">Price</label>
+    <div class="input-primary"
+      [class.invalid]="productForm.controls.price.touched && productForm.controls.price.invalid">
+      <input type="text" placeholder="Price" formControlName="price">
+      <p class="error-text" *ngIf="this.productForm.controls.price.errors?.['required']">
+        This field is required.
+      </p>
+    </div>
+    <label>Image</label>
+    <div class="input-primary"
+      [class.invalid]="productForm.controls.image.touched && productForm.controls.image.invalid">
+      <input type="text" placeholder="Image" formControlName="image">
+    </div>
+  </form>
+  <div class="dialog-buttons-group">
+    <button type="submit" class="button-cancel" (click)="dialogRef.close()">
+      <i class="icon-cancel"></i>
+      Cancel
+    </button>
+    <button type="submit" class="button-cyan" (click)="onSave()" [disabled]="productForm.invalid">
+      <i class="icon-save"></i>
+      Save data
+    </button>
+  </div>
+</div>
