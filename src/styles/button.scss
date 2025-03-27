@@ -1,4 +1,4 @@
-@mixin ButtonBase($color: #0085FF) {
+@mixin ButtonBase($color: var(--blue-2)) {
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
@@ -14,6 +14,7 @@
   text-align: center;
   overflow: hidden;
   text-overflow: ellipsis;
+  cursor: pointer;
 
   &:hover:not([disabled]) {
     transition: background 0.5s;
@@ -43,7 +44,7 @@
   }
 }
 
-@mixin ButtonOutlineBase($color: #0085FF) {
+@mixin ButtonOutlineBase($color: var(--blue-2)) {
   @include ButtonBase;
   background-color: #fff;
   border-color: $color;
@@ -68,9 +69,17 @@ a[class^="button-"] {
 }
 
 .button-cyan {
-  @include ButtonBase(#00DED1);
+  @include ButtonBase(var(--cyan-5));
 
   &-outline {
-    @include ButtonOutlineBase(#23A7AC);
+    @include ButtonOutlineBase(var(--cyan-5));
   }
+}
+
+.button-cyan {
+  @include ButtonBase(var(--cyan-4));
+}
+
+.button-cancel {
+  @include ButtonOutlineBase(var(--grey-400));
 }

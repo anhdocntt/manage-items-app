@@ -1,0 +1,268 @@
+.dialog-wrapper {
+  padding: 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--white-1);
+  border-radius: 30px;
+}
+
+.modal-center {
+  &-large {
+    .modal-dialog {
+      max-width: 640px;
+      height: 80%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .modal-content {
+        min-height: 570px;
+        min-width: 640px;
+        border-radius: 30px;
+
+        @media screen and (max-width: 991.98px) {
+          min-height: 490px;
+          min-width: 570px;
+        }
+
+        @media screen and (max-width: 767.98px) {
+          min-height: 390px;
+          min-width: 470px;
+        }
+      }
+    }
+  }
+
+  &-medium {
+    .modal-dialog {
+      height: 80%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      max-width: 368px;
+
+      .modal-content {
+        border-radius: 20px;
+      }
+    }
+  }
+}
+
+.modal-container {
+  border-radius: 50px;
+}
+
+.dialog {
+  &-header {
+    width: 100%;
+  }
+
+  &-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &-footer {
+    width: 100%;
+    margin-bottom: 14px;
+  }
+}
+
+/* Confirm Dialog */
+.modal {
+  &[class*=dialog-confirm-] {
+    .modal-content {
+      border: none;
+      border-radius: 10px;
+      margin-top: 45px;
+      box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.1);
+    }
+
+    .modal-header,
+    .modal-body,
+    .modal-footer {
+      border: none;
+      text-align: center;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .modal-header {
+      padding: 60px 0 16px;
+      position: relative;
+
+      h1 {
+        width: 100%;
+        font-size: 22px;
+        font-weight: 700;
+        color: #7C8691;
+      }
+
+      &-icon {
+        position: absolute;
+        top: -45px; // half the height
+        left: 50%;
+        margin-left: -45px; // half the width
+        height: 90px;
+        width: 90px;
+        border-radius: 50%;
+        border: 3px solid #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 42px;
+        color: #fff;
+        background-color: var(--grey-4);
+      }
+    }
+
+    .modal-body {
+      padding: 30px 24px 24px;
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 22.5px;
+    }
+
+    .modal-footer {
+      padding: 10px;
+      display: flex;
+
+      [class^=modal-btn-] {
+        border: none;
+        outline: none;
+        padding: 15px;
+        border-radius: 24px;
+        flex: 1;
+        font-weight: 700;
+
+        &:disabled {
+          background-color: var(--grey-5);
+          color: #fff;
+          cursor: not-allowed;
+        }
+      }
+
+      .modal-btn {
+        &-cancel {
+          background-color: #D0DEEB;
+          color: #899099;
+        }
+
+        &-action {
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  /* Confirm Dialog Variant */
+  &.dialog-confirm {
+
+    &-red,
+    &-Delete {
+      .modal-header-icon {
+        background-color: #FB4B4B;
+        border-color: #F6BDBD;
+      }
+
+      .modal-btn-action {
+        background-color: #FB4B4B;
+      }
+    }
+
+    &-Resolve {
+      .modal-header-icon {
+        background-color: #5277F7;
+        border-color: #EBEEFA;
+      }
+    }
+
+    &-Reopen {
+      .modal-header-icon {
+        background-color: #298097;
+        border-color: #E0F5FB;
+      }
+    }
+
+    &-warning {
+      .modal-header-icon {
+        background-color: #F2AF34;
+        border-color: #f5c46a;
+      }
+
+      .modal-btn-action {
+        background-color: #F2AF34;
+      }
+    }
+
+    &-success {
+      .modal-header {
+        >h1 {
+          color: var(--green-500);
+        }
+      }
+
+      .modal-header-icon {
+        background-color: var(--green-500);
+        border-color: var(--green-200);
+      }
+
+      .modal-btn-action {
+        background-color: var(--green-500);
+      }
+
+      .modal-btn-cancel {
+        display: none;
+      }
+    }
+  }
+
+  &.report {
+    .modal-dialog {
+      width: 356px;
+    }
+  }
+}
+
+.base-dialog {
+  border-radius: 30px;
+
+  .mat-mdc-dialog-container {
+    .mat-mdc-dialog-surface {
+      padding: 40px;
+      border-radius: 30px;
+      overflow: visible;
+    }
+  }
+}
+
+.form-dialog {
+  .mat-mdc-dialog-container {
+    .mat-mdc-dialog-surface {
+      padding: 40px;
+      border-radius: 30px;
+      overflow: visible;
+    }
+  }
+
+  .dialog-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+
+    .input-grid {
+      grid-template-columns: max-content minmax(300px, 1fr);
+      column-gap: 36px;
+      row-gap: 16px;
+    }
+  }
+}
+
+.dialog-buttons-group {
+  display: flex;
+  gap: 16px;
+}

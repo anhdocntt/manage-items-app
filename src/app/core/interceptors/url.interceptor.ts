@@ -14,6 +14,7 @@ export class UrlInterceptor implements HttpInterceptor {
   ) { }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    console.log(req)
     if (req.url.includes('assets')) {
       req = req.clone({
         url: `${req.url}`,

@@ -32,77 +32,9 @@ export class ProductListComponent implements OnInit {
   }
 
   private getAllProduct() {
-    const res = [
-      {
-        "name": "Item 1 new",
-        "type": "Type A",
-        "category": 0,
-        "price": 10.49,
-        "images": "https://placehold.co/200x200",
-        "isDeleted": true,
-        "id": "1"
-      },
-      {
-        "id": "2",
-        "name": "Item 2",
-        "type": "Type B",
-        "category": 1,
-        "price": 15.49,
-        "images": null,
-        "isDeleted": false
-      },
-      {
-        "id": "3",
-        "name": "Item 3",
-        "type": "Type A",
-        "category": 2,
-        "price": 20,
-        "images": null,
-        "isDeleted": false
-      },
-      {
-        "id": "4",
-        "name": "Item 4",
-        "type": "Type C",
-        "category": 0,
-        "price": 5.75,
-        "images": null,
-        "isDeleted": false
-      },
-      {
-        "id": "5",
-        "name": "Item 5",
-        "type": "Type B",
-        "category": 1,
-        "price": 12.3,
-        "images": "https://placehold.co/300x200",
-        "isDeleted": false
-      },
-      {
-        "id": "7fa1"
-      },
-      {
-        "id": "1c3d",
-        "name": "Item 1",
-        "type": "Type A",
-        "category": 0,
-        "price": 10.49,
-        "images": "https://placehold.co/200x200",
-        "isDeleted": false
-      },
-      {
-        "id": "750d",
-        "name": "Item 1",
-        "type": "Type A",
-        "category": 0,
-        "price": 10.49,
-        "images": "https://placehold.co/200x200"
-      }
-    ] as unknown as any
-    this.dataSource.data = res;
-    // this.productService.getAllProduct().subscribe(res => {
-    //   this.dataSource.data = res;
-    // })
+    this.productService.getAllProduct().subscribe(res => {
+      this.dataSource.data = res;
+    })
   }
 
   openAddProductDialog() {
@@ -124,5 +56,8 @@ export class ProductListComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe(res => {
     });
+  }
+
+  removeProduct(id: string) {
   }
 }
