@@ -19,4 +19,28 @@
       gap: 16px;
     }
   }
+
+  .product-search {
+    display: inline-block;
+    position: relative;
+    margin-bottom: 24px;
+
+    input {
+      border-radius: 8px;
+      border: 1px solid #d4dffa;
+      background: #FFF;
+      width: 422px;
+      padding: 10px 16px;
+      outline: none;
+      font-size: 12px;
+    }
+
+    i {
+      position: absolute;
+      right: 16px;
+      transform: translateY(-50%);
+      top: 50%;
+      color: var(--grey-600);
+    }
+  }
 }

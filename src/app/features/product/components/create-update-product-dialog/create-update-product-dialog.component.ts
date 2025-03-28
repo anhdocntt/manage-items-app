@@ -1,8 +1,8 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, Input } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { ProductService } from '../../services/product.service';
-import { Product } from '../../services/product.dto';
+import { CreateUpdateProductBody, Product } from '../../services/product.dto';
 import { NullableForm } from '../../../../core/shared/types';
 import { CommonModule } from '@angular/common';
 
@@ -13,6 +13,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './create-update-product-dialog.component.scss'
 })
 export class CreateUpdateProductDialogComponent {
+  @Input() isEdit: boolean = false;
   productForm: FormGroup<NullableForm<Product>>;
 
   constructor(
@@ -27,7 +28,6 @@ export class CreateUpdateProductDialogComponent {
       category: new FormControl(null, Validators.required),
       type: new FormControl(null),
       price: new FormControl(null, [Validators.required, Validators.min(0)]),
-      image: new FormControl(null),
     });
     if (this.dialogData) {
       this.productForm.patchValue(this.dialogData)
@@ -35,6 +35,16 @@ export class CreateUpdateProductDialogComponent {
   }
 
   onSave() {
-
+    const { id, ...values } = this.productForm.value;
+    const payload = {
+      ...values
+    } as CreateUpdateProductBody;
+    const observable = this.isEdit
+      ? this.productService.updateProduct(id as string, payload)
+      : this.productService.createProduct(payload);
+    observable.subscribe({
+      next: () => this.dialogRef.close(true),
+      error: () => this.dialogRef.close(false)
+    })
   }
 }

@@ -4,7 +4,7 @@ const database = {
             "id": "1",
             "name": "Item 1",
             "type": "Type A",
-            "category": 0,
+            "category": "Category 1",
             "price": 10.49,
             "image": "https://placehold.co/200x200",
             "isDeleted": false
@@ -13,7 +13,7 @@ const database = {
             "id": "2",
             "name": "Item 2",
             "type": "Type B",
-            "category": 1,
+            "category": "Category 1",
             "price": 15.49,
             "image": null,
             "isDeleted": false
@@ -22,7 +22,7 @@ const database = {
             "id": "3",
             "name": "Item 3",
             "type": "Type A",
-            "category": 2,
+            "category": "Category 2",
             "price": 20,
             "image": null,
             "isDeleted": false
@@ -31,7 +31,7 @@ const database = {
             "id": "4",
             "name": "Item 4",
             "type": "Type C",
-            "category": 0,
+            "category": "Category 2",
             "price": 5.75,
             "image": null,
             "isDeleted": false
@@ -40,7 +40,7 @@ const database = {
             "id": "5",
             "name": "Item 5",
             "type": "Type B",
-            "category": 1,
+            "category": "Category 1",
             "price": 12.3,
             "image": "https://placehold.co/300x200",
             "isDeleted": false

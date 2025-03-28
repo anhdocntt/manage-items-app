@@ -1,5 +1,9 @@
-<div *ngIf="hasSpinner" class="app-spinner">
-    <div *ngIf="show" class="content">
+@if (hasSpinner) {
+<div class="app-spinner">
+    @if (show) {
+    <div class="content">
         <div class="lds-dual-ring"></div>
     </div>
+    }
 </div>
+}

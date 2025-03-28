@@ -2,9 +2,8 @@ export interface Product {
   id: string;
   name: string;
   type: string;
-  category: number;
+  category: string;
   price: number;
-  image: string;
   isDeleted?: boolean;
 }
 

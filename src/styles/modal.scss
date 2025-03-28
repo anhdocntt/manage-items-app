@@ -266,3 +266,13 @@
   display: flex;
   gap: 16px;
 }
+
+@media screen and (max-width: 500px) {
+  .dialog-form-container {
+    .input-grid {
+      grid-template-columns: max-content minmax(200px, 1fr) !important;
+      column-gap: 12px !important;
+      row-gap: 12px !important;
+    }
+  }
+}
