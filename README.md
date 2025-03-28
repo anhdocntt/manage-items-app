@@ -4,13 +4,25 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 
 ## Development server
 
+To start the local development backend server, run:
+
+```bash
+npm run server
+```
+
+Once the backend server is running, the api url is `http://localhost:3000/`.
+
 To start a local development server, run:
 
+```bash
+npm run start
+```
+or
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Once the server is running, open your browser and navigate to `http://localhost:4201/`. The application will automatically reload whenever you modify any of the source files.
 
 ## Code scaffolding
 
