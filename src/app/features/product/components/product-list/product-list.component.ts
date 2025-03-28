@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from '../../services/product.service';
+import { FormsModule } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { Product } from '../../services/product.dto';
-import { MatDialog } from '@angular/material/dialog';
+import { ProductService } from '../../services/product.service';
 import { CreateUpdateProductDialogComponent } from '../create-update-product-dialog/create-update-product-dialog.component';
-import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-product-list',
@@ -40,6 +40,11 @@ export class ProductListComponent implements OnInit {
     })
   }
 
+  private resetSearchAndGetAllProduct() {
+    this.searchText = "";
+    this.getAllProduct();
+  }
+
   openAddProductDialog() {
     const dialogRef = this.dialog.open(CreateUpdateProductDialogComponent, {
       autoFocus: false,
@@ -48,7 +53,7 @@ export class ProductListComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe(res => {
       if (!res) return;
-      this.getAllProduct();
+      this.resetSearchAndGetAllProduct();
     });
   }
 
@@ -62,12 +67,12 @@ export class ProductListComponent implements OnInit {
     dialogRef.componentInstance.isEdit = true;
     dialogRef.afterClosed().subscribe(res => {
       if (!res) return;
-      this.getAllProduct();
+      this.resetSearchAndGetAllProduct();
     });
   }
 
   removeProduct(id: string) {
-    this.productService.softDeleteProduct(id).subscribe(() => this.getAllProduct());
+    this.productService.softDeleteProduct(id).subscribe(() => this.resetSearchAndGetAllProduct());
   }
 
   onSearchChange() {

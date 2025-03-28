@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@use 'tailwindcss' as *;
 @use './styles/button.scss' as *;
 @use './styles/table.scss' as *;
 @use './styles/modal.scss' as *;
